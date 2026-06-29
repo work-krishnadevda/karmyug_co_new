@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import RotatingWord from "../../components/Shared/RotatingWord";
 import LogoMarquee from "../../components/Shared/LogoMarquee";
 
+
 export default function HeroSection() {
   return (
     <section className="relative overflow-x-hidden min-h-screen pt-20 md:pt-28 flex items-center justify-center bg-white">
@@ -54,6 +55,7 @@ export default function HeroSection() {
 
         <LogoMarquee />
       </div>
+      
     </section>
   );
 }

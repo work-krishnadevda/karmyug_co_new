@@ -1,7 +1,7 @@
-import realapple from "../../assets/logos/realapplelogo.png.jpeg";
+import realapple from "../../assets/logos/realapple.png";
 import RcsIcon from "../../assets/logos/Rcslogo.png";
-import himveda from "../../assets/logos/himvedalogo.png.jpeg";
-import aryn from "../../assets/logos/arynlogo.png.jpeg";
+import himveda from "../../assets/logos/himVedaLogo.png";
+import aryn from "../../assets/logos/arynlogo.png";
 
 export default function LogoMarquee() {
   const logos = [realapple, RcsIcon, himveda, aryn];
