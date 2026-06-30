@@ -88,6 +88,7 @@
 //     </div>
 //   );
 // }
+
 // import crane from "../../assets/images/products/crane/HRMS overview.png";
 // import valuxpert from "../../assets/images/products/valuxpert/valuXpertOverview.png";
 // import quixivo from "../../assets/images/products/quixivo/Quixivo overview.png";
@@ -148,6 +149,7 @@
 //     </div>
 //   );
 // }
+
 import crane from "../../assets/images/products/crane/HRMS overview.png";
 import valuxpert from "../../assets/images/products/valuxpert/valuXpertOverview.png";
 import quixivo from "../../assets/images/products/quixivo/Quixivo overview.png";

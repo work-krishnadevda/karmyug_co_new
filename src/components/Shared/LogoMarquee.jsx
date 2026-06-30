@@ -4,38 +4,49 @@ import himveda from "../../assets/logos/himVedaLogo.png";
 import aryn from "../../assets/logos/arynlogo.png";
 
 export default function LogoMarquee() {
-  const logos = [realapple, RcsIcon, himveda, aryn];
+  const logos = [
+    {
+      src: realapple,
+      className: "h-12",
+    },
+    {
+      src: RcsIcon,
+      className: "h-10", // slightly smaller
+    },
+    {
+      src: himveda,
+      className: "h-16", // slightly bigger
+    },
+    {
+      src: aryn,
+      className: "h-12",
+    },
+  ];
 
   return (
-    <div className="overflow-hidden mt-10">
-      <div className="marquee gap-16">
-        {[...logos, ...logos].map((logo, index) => (
+    <section className="w-full overflow-hidden py-8">
+      <div className="marquee">
+        {[...logos, ...logos, ...logos].map((logo, index) => (
           <div
             key={index}
             className="
-w-[220px]
-h-[90px]
-flex
-items-center
-justify-center
-flex-shrink-0
-"
+              flex-shrink-0
+              w-40
+              h-20
+              flex
+              items-center
+              justify-center
+              mx-4
+            "
           >
             <img
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              className="
-max-h-[70px]
-max-w-[180px]
-object-contain
-transition-all
-duration-300
-hover:scale-105
-"
+              src={logo.src}
+              alt=""
+              className={`${logo.className} w-auto max-w-[130px] object-contain`}
             />
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
