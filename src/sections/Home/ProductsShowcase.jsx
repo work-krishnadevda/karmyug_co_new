@@ -89,67 +89,6 @@
 //   );
 // }
 
-// import crane from "../../assets/images/products/crane/HRMS overview.png";
-// import valuxpert from "../../assets/images/products/valuxpert/valuXpertOverview.png";
-// import quixivo from "../../assets/images/products/quixivo/Quixivo overview.png";
-// import { ArrowUpRight } from "lucide-react";
-
-// export default function ProductsShowcase() {
-//   const projects = [
-//     {
-//       id: 1,
-//       name: "HRMS Crane",
-//       description:
-//         "Streamline workforce operations: manage employees, attendance, payroll, and analytics through secure portals.",
-//     },
-//     {
-//       id: 2,
-//       name: "ValuXpert",
-//       description:
-//         "Optimize valuation workflows with automated case allocation, field inspections, and business intelligence.",
-//     },
-//     {
-//       id: 3,
-//       name: "Quixivo",
-//       description:
-//         "All-in-one institute management: handle students, fees, communication, and learning from a single platform.",
-//     },
-//   ];
-
-//   return (
-//     <div className="overflow-hidden mt-10 py-8 bg-slate-50/50">
-//       <div className="marquee flex gap-6 px-4">
-//         {[...projects, ...projects].map((project, index) => (
-//           <div
-//             key={index}
-//             className="group w-[85vw] md:w-[380px] border border-blue-100 rounded-2xl p-5 bg-white shadow-sm flex-shrink-0 hover:shadow-blue-100 hover:shadow-xl transition-all duration-300"
-//           >
-//             {/* Image Container */}
-//             <div className="relative overflow-hidden rounded-xl mb-5 bg-blue-50/80 h-[220px] flex items-center justify-center">
-//               <div className="absolute top-3 right-3 z-10 w-10 h-10 rounded-lg bg-white shadow-md flex items-center justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 text-blue-600">
-//                 <ArrowUpRight size={18} />
-//               </div>
-
-//               <img
-//                 src={project.image}
-//                 alt={project.name}
-//                 className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
-//               />
-//             </div>
-
-//             <h3 className="font-bold text-xl text-slate-800 mb-2">
-//               {project.name}
-//             </h3>
-//             <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">
-//               {project.description}
-//             </p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
 import crane from "../../assets/images/products/crane/HRMS overview.png";
 import valuxpert from "../../assets/images/products/valuxpert/valuXpertOverview.png";
 import quixivo from "../../assets/images/products/quixivo/Quixivo overview.png";
