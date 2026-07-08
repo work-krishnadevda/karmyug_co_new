@@ -2,7 +2,7 @@ import ProductsShowcase from "@/sections/Home/ProductsShowcase";
 import Navbar from "../../components/Navbar/Navbar";
 import HeroSection from "../../sections/Home/HeroSection";
 import ProductsHeading from "../../sections/Home/ProductsHeading";
-
+import Company from "../../pages/Company/Company.jsx";
 import CoreServices from "@/sections/Home/CoreServices";
 import WhyKarmyug from "@/sections/Home/WhyKarmyug";
 import DeliveryPipeline from "@/components/deliveryPipeline/DeliveryPipeline";

@@ -37,11 +37,7 @@ export default function WhyChoose() {
         <div>
           <SectionHeading />
 
-          <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">
-            We build websites, enterprise software, AI-powered applications, and
-            digital products that help businesses automate operations, improve
-            efficiency and scale faster.
-          </p>
+         
 
           {/* Highlights */}
 

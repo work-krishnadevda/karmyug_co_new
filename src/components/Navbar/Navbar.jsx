@@ -74,7 +74,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              to=""
+              to="/company"
               className="text-slate-700 font-medium hover:text-[#2563EB] transition-colors duration-300"
             >
               Company
