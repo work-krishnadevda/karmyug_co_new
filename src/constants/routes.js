@@ -1,0 +1,17 @@
+export const ROUTES = {
+  HOME: "/",
+  PRODUCTS: "/products",
+  QUIXIVO: "/products/quixivo",
+  HRMS: "/products/hrms",
+  VALUXPERT: "/products/valuxpert",
+  SERVICES: "/services",
+  ABOUT: "/company/about",
+  CAREERS: "/company/careers",
+  PARTNERS: "/company/partners",
+  BLOG: "/company/blog",
+  TESTIMONIALS: "/testimonials",
+  CONTACT: "/contact",
+  PRIVACY: "/privacy-policy",
+  TERMS: "/terms",
+  NOT_FOUND: "/404",
+};
