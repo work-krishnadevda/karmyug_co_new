@@ -22,7 +22,6 @@ const FOOTER_LINKS = {
   ],
   Company: [
     { label: "About us", to: "/company/about" },
-    { label: "Careers", to: "/company/careers" },
     { label: "Partners", to: "/company/partners" },
     { label: "Blog", to: "/company/blog" },
   ],
