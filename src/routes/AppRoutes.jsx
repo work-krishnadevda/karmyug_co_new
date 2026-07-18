@@ -7,7 +7,7 @@ import PageLoader from "@/components/Shared/PageLoader";
 const Home = lazy(() => import("@/pages/Home/Home"));
 const Company = lazy(() => import("@/pages/Company/Company"));
 const About = lazy(() => import("@/pages/Company/About"));
-const Careers = lazy(() => import("@/pages/Company/Careers"));
+
 const Partners = lazy(() => import("@/pages/Company/Partners"));
 const Blog = lazy(() => import("@/pages/Company/Blog"));
 const Services = lazy(() => import("@/pages/Services/Services"));
