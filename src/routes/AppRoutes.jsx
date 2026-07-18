@@ -30,7 +30,7 @@ export default function AppRoutes() {
 
         <Route path="/company" element={<Company />} />
         <Route path="/company/about" element={<About />} />
-        <Route path="/company/careers" element={<Careers />} />
+       
         <Route path="/company/partners" element={<Partners />} />
         <Route path="/company/blog" element={<Blog />} />
 
