@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
     "Karmyug builds the operating suite for growing teams — sales, work and valuation, unified under one roof.",
   email: "official@karmyug.co",
   supportEmail: "official@karmyug.co",
-  phone: " +91 8770924535",
+  phone: " +91 8770924535, +91  8962241437",
   // Dedicated number used by every "Schedule a Call" button site-wide so it
   // opens the phone dialer directly (tel:) instead of email or a modal.
   scheduleCallNumber: "+918770924535",
