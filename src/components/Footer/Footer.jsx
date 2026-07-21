@@ -135,7 +135,7 @@ export default function Footer() {
                 >
                   <Mail
                     size={16}
-                    className="text-brand-light-blue"
+                    className="text-white"
                     aria-hidden="true"
                   />
                   {COMPANY_INFO.email}
@@ -148,7 +148,7 @@ export default function Footer() {
                 >
                   <Phone
                     size={16}
-                    className="text-brand-light-blue"
+                    className="text-white"
                     aria-hidden="true"
                   />
                   {COMPANY_INFO.phone}
@@ -157,7 +157,7 @@ export default function Footer() {
               <li className="flex items-center gap-2.5">
                 <MapPin
                   size={16}
-                  className="shrink-0 text-brand-light-blue"
+                  className="shrink-0 text-white"
                   aria-hidden="true"
                 />
                 {COMPANY_INFO.address}
