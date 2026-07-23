@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import RotatingWord from "../../components/Shared/RotatingWord";
 import LogoMarquee from "../../components/Shared/LogoMarquee";
 import { Link } from "react-router-dom";
+import useBooking from "@/hooks/useBooking";
+import BookingModal from "@/booking/BookingModal";
 
 export default function HeroSection() {
+  const booking = useBooking();
   return (
     <section className="relative overflow-x-hidden min-h-screen pt-20 md:pt-28 flex items-center justify-center bg-white">
       {/* Responsive Glows */}
@@ -46,20 +49,32 @@ export default function HeroSection() {
 
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 px-4">
           <Link
-            to="/contact"
+             to="/contact?intent=schedule"
             className="w-full sm:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-[0_10px_25px_rgba(37,99,235,0.25)]"
           >
             Start for FREE
           </Link>
-          <Link
-            to="/contact?intent=schedule"
-            className="w-full sm:w-auto bg-white border border-slate-300 hover:border-[#2563EB] hover:text-[#2563EB] text-slate-700 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
-          >
-            Schedule a Demo
-          </Link>
+          <button
+  onClick={() => booking.openBooking("demo")}
+  className="w-full sm:w-auto bg-white border border-slate-300 hover:border-[#2563EB] hover:text-[#2563EB] text-slate-700 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+>
+  Schedule a Demo
+</button>
         </div>
 
         <LogoMarquee />
+       <BookingModal
+  open={booking.open}
+  setOpen={booking.setOpen}
+  onClose={booking.closeBooking}
+  meetingType={booking.meetingType}
+  setMeetingType={booking.changeMeeting}
+  step={booking.step}
+  contact={booking.contact}
+  onSubmitContact={booking.submitContact}
+  onBack={booking.backToDetails}
+/>
+
       </div>
     </section>
   );

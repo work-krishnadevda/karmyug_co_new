@@ -58,6 +58,8 @@ export default function Home() {
       <TeamSection />
       <TestimonialsPreview />
       <CTASection />
+      
+      
     </main>
   );
 }

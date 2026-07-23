@@ -14,6 +14,7 @@ import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import MegaMenu from "./ProductsMegaMenu";
 import { products } from "../../data/products";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { useLogoClick } from "@/hooks/useLogoClick";
 import { SCHEDULE_CALL_HREF } from "@/constants/companyInfo";
 
 import Karmyuglogo from "../../assets/logos/Karmyuglogo.webp";
@@ -46,6 +47,9 @@ export default function Navbar() {
   const navigatingRef = useRef(false);
 
   useScrollLock(mobileOpen, navigatingRef);
+
+  // Home from another route; smooth-scroll to top if already on "/".
+  const handleLogoClick = useLogoClick();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -92,7 +96,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" onClick={handleLogoClick} className="flex items-center gap-3">
             <img src={Karmyuglogo} alt="Karmyug" className="h-12 w-auto" />
 
             <div className="flex flex-col leading-[0.9]">

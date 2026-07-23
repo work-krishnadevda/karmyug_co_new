@@ -184,6 +184,31 @@ body {
   border-radius: 4px;
 }
 
+/* Slim, on-brand scrollbar for the booking modal's dark panels (calendar
+   step, contact form, meeting info) instead of the bulky default OS
+   scrollbar — used by the booking flow to feel closer to Cal.com/Linear. */
+.scrollbar-thin-dark {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(134, 197, 255, 0.35) transparent;
+}
+
+.scrollbar-thin-dark::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin-dark::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin-dark::-webkit-scrollbar-thumb {
+  background-color: rgba(134, 197, 255, 0.35);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin-dark::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(134, 197, 255, 0.55);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

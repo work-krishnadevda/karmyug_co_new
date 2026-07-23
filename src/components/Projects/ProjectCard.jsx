@@ -77,20 +77,15 @@ function ProjectCard({ project, index = 0 }) {
           </p>
         )}
 
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Visit the live ${name} website (opens in a new tab)`}
-          className="group/btn mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[--brand-primary] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[--brand-primary-dark] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--brand-primary] focus-visible:ring-offset-2"
-        >
-          Visit Website
-          <ArrowUpRight
-            size={15}
-            aria-hidden="true"
-            className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
-          />
-        </a>
+       <span
+  className="group/btn mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-[--brand-primary] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[--brand-primary-dark]"
+>
+  Visit Website
+  <ArrowUpRight
+    size={15}
+    className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+  />
+</span>
       </div>
     </motion.a>
   );

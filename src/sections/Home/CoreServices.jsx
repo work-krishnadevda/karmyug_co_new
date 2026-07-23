@@ -258,7 +258,7 @@ export default function CoreServices() {
             Backed By Full-Stack Capability
           </p>
 
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 items-start">
             {capabilities.map((service) => {
               const Icon = service.icon;
               const isOpen = openSlug === service.slug;
