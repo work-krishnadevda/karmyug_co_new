@@ -136,21 +136,21 @@ export default function TeamSection() {
         >
           {/* Arrows */}
           <button
-            type="button"
-            onClick={previous}
-            aria-label="Previous team member"
-            className="absolute left-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-slate-600 shadow-lg transition-all duration-300 hover:scale-110 hover:text-brand-primary lg:left-6"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            type="button"
-            onClick={next}
-            aria-label="Next team member"
-            className="absolute right-2 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-slate-600 shadow-lg transition-all duration-300 hover:scale-110 hover:text-brand-primary lg:right-6"
-          >
-            <ChevronRight size={20} />
-          </button>
+  type="button"
+  onClick={previous}
+  aria-label="Previous team member"
+  className="absolute left-2 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-slate-600 shadow-lg transition-all duration-300 hover:scale-110 hover:text-brand-primary md:flex lg:left-6"
+>
+  <ChevronLeft size={20} />
+</button>
+         <button
+  type="button"
+  onClick={next}
+  aria-label="Next team member"
+  className="absolute right-2 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-slate-600 shadow-lg transition-all duration-300 hover:scale-110 hover:text-brand-primary md:flex lg:right-6"
+>
+  <ChevronRight size={20} />
+</button>
 
           <div ref={viewportRef} className="overflow-hidden px-4 py-4">
             <motion.div

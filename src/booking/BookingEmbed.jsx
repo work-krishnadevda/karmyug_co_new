@@ -41,19 +41,26 @@ export default function BookingEmbed({ meetingType, contact }) {
   }, [meeting.id]);
 
   return (
-    // This is the single scroll owner for the calendar step. Earlier this
-    // relied on the Cal iframe scrolling *internally*, but Radix's dialog
-    // scroll-lock (react-remove-scroll) can't see inside a cross-origin
-    // iframe to know it's scrollable, so it was cancelling every
-    // wheel/trackpad/touch gesture over it before the iframe ever got a
-    // chance to scroll — the only thing that "worked" was manually
-    // dragging, because that isn't a wheel/touchmove event. Letting the
-    // iframe grow to its natural content height (no fixed height) and
-    // giving *this* div the real overflow means the scroll happens in the
-    // normal document, so the scroll-lock correctly recognizes it as
-    // scrollable and every input method behaves the same, natural way.
+    // On desktop (md: and up) this is the single scroll owner for the
+    // calendar step. Earlier this relied on the Cal iframe scrolling
+    // *internally*, but Radix's dialog scroll-lock (react-remove-scroll)
+    // can't see inside a cross-origin iframe to know it's scrollable, so it
+    // was cancelling every wheel/trackpad/touch gesture over it before the
+    // iframe ever got a chance to scroll — the only thing that "worked" was
+    // manually dragging, because that isn't a wheel/touchmove event.
+    // Letting the iframe grow to its natural content height (no fixed
+    // height) and giving *this* div the real overflow means the scroll
+    // happens in the normal document, so the scroll-lock correctly
+    // recognizes it as scrollable and every input method behaves the same,
+    // natural way.
+    //
+    // On mobile there's no independent scroll region here at all — the
+    // whole booking modal (header, tabs, meeting details, this calendar)
+    // is one continuous page scroll owned by BookingModal, so this div just
+    // grows to its natural content height instead of clipping/scrolling
+    // on its own.
     <div
-      className="scrollbar-thin-dark relative h-full w-full overflow-y-auto overscroll-contain bg-[#0F2545]"
+      className="scrollbar-thin-dark relative w-full bg-[#0F2545] md:h-full md:overflow-y-auto md:overscroll-contain"
       style={{ WebkitOverflowScrolling: "touch" }}
     >
       {!ready && <BookingLoader />}

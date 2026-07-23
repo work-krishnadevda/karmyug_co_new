@@ -266,7 +266,7 @@ export default function CoreServices() {
               return (
                 <div
                   key={service.slug}
-                  className="group relative overflow-hidden rounded-2xl border border-[#E6EEF9] bg-white/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#86C5FF] hover:shadow-xl"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#E6EEF9] bg-white/90 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#86C5FF] hover:shadow-xl"
                 >
                   <button
                     type="button"
@@ -277,7 +277,7 @@ export default function CoreServices() {
                         current === service.slug ? null : service.slug
                       )
                     }
-                    className="flex w-full flex-col items-start gap-2 p-4 text-left sm:p-5"
+                    className="flex w-full flex-col items-start justify-between gap-2 p-4 text-left sm:p-5"
                   >
                     <div className="flex w-full items-start justify-between">
                       <div
@@ -289,18 +289,22 @@ export default function CoreServices() {
                       <ChevronDown
                         size={16}
                         aria-hidden="true"
-                        className={`mt-2 text-slate-400 transition-transform duration-300 ${
+                        className={`mt-2 shrink-0 text-slate-400 transition-transform duration-300 ${
                           isOpen ? "rotate-180" : ""
                         }`}
                       />
                     </div>
 
-                    <h3 className="mt-1 text-sm font-bold leading-5 text-[#173B73] sm:text-base">
-                      {service.title}
-                    </h3>
-                    <span className="text-xs font-medium uppercase tracking-wide text-[#FFA62B]">
-                      {service.badge}
-                    </span>
+                    {/* Fixed-height title area (2 lines reserved) keeps every
+                        closed card the same height, regardless of title length */}
+                    <div className="mt-1 w-full">
+                      <h3 className="line-clamp-2 min-h-[2.5rem] text-sm font-bold leading-5 text-[#173B73] sm:min-h-[2.75rem] sm:text-base">
+                        {service.title}
+                      </h3>
+                      <span className="mt-1 block text-xs font-medium uppercase tracking-wide text-[#FFA62B]">
+                        {service.badge}
+                      </span>
+                    </div>
                   </button>
 
                   <div
