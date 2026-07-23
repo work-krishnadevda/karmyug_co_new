@@ -113,16 +113,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_2.6fr]">
           {/* Brand column */}
           <div className="flex flex-col gap-5">
-            <Link to="/" className="flex items-center gap-3">
-              <img
-                src={Karmyuglogo}
-                alt="Karmyug"
-                className="h-10 w-auto brightness-0 invert"
-              />
-              <span className="text-xl font-extrabold tracking-tight text-white">
-                KARMYUG
-              </span>
-            </Link>
+           <Link to="/" className="flex items-center gap-3">
+  <img
+    src={Karmyuglogo}
+    alt="Karmyug"
+    className="h-10 w-auto"
+  />
+
+  <div className="flex flex-col leading-none">
+    <span className="text-xl font-extrabold tracking-tight text-white">
+      KARMYUG
+    </span>
+    <span className="mt-1 text-xs font-medium uppercase tracking-[0.25em] text-white">
+      AI Solutions
+    </span>
+  </div>
+</Link>
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
               {COMPANY_INFO.description}
             </p>
