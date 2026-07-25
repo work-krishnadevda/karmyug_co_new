@@ -4,6 +4,8 @@ import himveda from "../../assets/logos/himVedaLogo.webp";
 import aryn from "../../assets/logos/arynlogo.webp";
 import madhukar from "./../../assets/logos/madhukar_associates.png"
 
+import taxwise from "./../../assets/logos/LogoTaxWise.png"
+
 export default function LogoMarquee() {
   const logos = [
     {
@@ -25,6 +27,10 @@ export default function LogoMarquee() {
     {
       src: madhukar,
       className: "h-35", 
+    },
+    {
+     src: taxwise,
+      className: "h-25", 
     }
   ];
 

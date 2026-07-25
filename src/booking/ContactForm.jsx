@@ -2,10 +2,15 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_RE = /^[\d+][\d\s-]{7,14}$/;
+const PHONE_RE = /^\d{10}$/; // Only 10 digits
 
 export default function ContactForm({ meeting, onSubmit }) {
-  const [values, setValues] = useState({ name: "", email: "", phone: "" });
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
   const [errors, setErrors] = useState({});
 
   function update(field, value) {
@@ -15,11 +20,19 @@ export default function ContactForm({ meeting, onSubmit }) {
 
   function validate() {
     const next = {};
-    if (values.name.trim().length < 2) next.name = "Enter your full name.";
-    if (!EMAIL_RE.test(values.email.trim()))
+
+    if (values.name.trim().length < 2) {
+      next.name = "Enter your full name.";
+    }
+
+    if (!EMAIL_RE.test(values.email.trim())) {
       next.email = "Enter a valid email address.";
-    if (!PHONE_RE.test(values.phone.trim()))
-      next.phone = "Enter a valid phone number.";
+    }
+
+    if (!PHONE_RE.test(values.phone.trim())) {
+      next.phone = "Enter a valid 10-digit phone number.";
+    }
+
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -31,15 +44,6 @@ export default function ContactForm({ meeting, onSubmit }) {
   }
 
   return (
-    // min-h-full (not h-full) + margin:auto on the child — not
-    // justify-center on this element — is deliberate. This box sits inside
-    // a scrollable parent, and centering with `justify-content: center`
-    // clips its own padding the moment the form is taller than the visible
-    // area (the browser trims the "start" side to make room), which is
-    // exactly what was cutting off the padding under the submit button and
-    // letting the modal's white background show through the navy panel.
-    // `margin: auto` doesn't have that problem: it collapses to 0 instead
-    // of clipping, so the padding around the content is always intact.
     <div className="flex min-h-full flex-col bg-[#0F2545]">
       <div className="m-auto w-full max-w-md px-5 py-8 sm:px-14 sm:py-14">
         <span className="rounded-full bg-[#FFA62B]/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#FFA62B]">
@@ -49,12 +53,14 @@ export default function ContactForm({ meeting, onSubmit }) {
         <h2 className="mt-4 text-2xl font-bold text-white">
           Before we lock in your slot
         </h2>
+
         <p className="mt-2 text-sm leading-6 text-[#9FB3D9]">
-          Share your details so we can confirm the {meeting.title.toLowerCase()}{" "}
-          and reach you if plans change.
+          Share your details so we can confirm the{" "}
+          {meeting.title.toLowerCase()} and reach you if plans change.
         </p>
 
         <form onSubmit={handleSubmit} noValidate className="mt-8 space-y-5">
+          {/* Name */}
           <Field label="Full name" error={errors.name}>
             <input
               type="text"
@@ -65,6 +71,7 @@ export default function ContactForm({ meeting, onSubmit }) {
             />
           </Field>
 
+          {/* Email */}
           <Field label="Work email" error={errors.email}>
             <input
               type="email"
@@ -75,12 +82,22 @@ export default function ContactForm({ meeting, onSubmit }) {
             />
           </Field>
 
+          {/* Phone */}
           <Field label="Phone number" error={errors.phone}>
             <input
               type="tel"
               value={values.phone}
-              onChange={(e) => update("phone", e.target.value)}
-              placeholder="+91 98765 43210"
+              onChange={(e) => {
+                // Allow ONLY numbers
+                const value = e.target.value
+                  .replace(/\D/g, "") // Remove everything except digits
+                  .slice(0, 10); // Limit to 10 digits
+
+                update("phone", value);
+              }}
+              placeholder="9876543210"
+              inputMode="numeric"
+              maxLength={10}
               className={inputClass(errors.phone)}
             />
           </Field>
@@ -109,7 +126,9 @@ function Field({ label, error, children }) {
       <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-[#7590C2]">
         {label}
       </span>
+
       {children}
+
       {error && (
         <span className="mt-1 block text-xs text-red-400">{error}</span>
       )}

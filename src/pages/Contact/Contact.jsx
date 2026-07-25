@@ -105,8 +105,18 @@ function ContactForm() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (field) => (event) =>
-    setForm((prev) => ({ ...prev, [field]: event.target.value }));
+ const handleChange = (field) => (event) => {
+  let value = event.target.value;
+
+  if (field === "phone") {
+    value = value.replace(/\D/g, "").slice(0, 10);
+  }
+
+  setForm((prev) => ({
+    ...prev,
+    [field]: value,
+  }));
+};
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -224,15 +234,17 @@ function ContactForm() {
         >
           Phone number
         </label>
-        <input
-          id="phone"
-          type="tel"
-          required
-          value={form.phone}
-          onChange={handleChange("phone")}
-          placeholder="+91 98765 43210"
-          className="rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none transition-colors focus-visible:border-brand-primary"
-        />
+       <input
+  id="phone"
+  type="tel"
+  required
+  value={form.phone}
+  onChange={handleChange("phone")}
+  placeholder="9876543210"
+  inputMode="numeric"
+  maxLength={10}
+  className="rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none transition-colors focus-visible:border-brand-primary"
+/>
       </div>
 
       <div className="flex flex-col gap-1.5 sm:col-span-2">
