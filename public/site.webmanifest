@@ -2,20 +2,20 @@
   "name": "Karmyug Solutions",
   "short_name": "Karmyug",
   "description": "AI-powered HRMS, ValuXpert and Quixivo software for workforce management, valuation workflows and institute administration.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2e5aa7",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "/karmyuglogo.png",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "theme_color": "#2e5aa7",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
 }

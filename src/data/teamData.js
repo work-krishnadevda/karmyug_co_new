@@ -30,7 +30,7 @@ export const team = [
   {
     id: "member-02",
     name: "Krishna Singh Devda",
-    role: "Full Stack Product Engineer",
+    role: "Co-founder | Full Stack Product Engineer",
     description:
       "Diagnoses challenges quickly and delivers reliable full-stack solutions that keep products and projects moving forward.",
     linkedin: "https://www.linkedin.com/in/krishna-singh-devda/",

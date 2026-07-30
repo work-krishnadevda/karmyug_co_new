@@ -3,6 +3,7 @@ import RcsIcon from "../../assets/logos/Rcslogo.webp";
 import himveda from "../../assets/logos/himVedaLogo.webp";
 import aryn from "../../assets/logos/arynlogo.webp";
 import madhukar from "./../../assets/logos/madhukar_associates.png"
+import kidzee from "./../../assets/logos/Kidzeelogo.png"
 
 import taxwise from "./../../assets/logos/LogoTaxWise.png"
 
@@ -31,6 +32,10 @@ export default function LogoMarquee() {
     {
      src: taxwise,
       className: "h-25", 
+    },
+    {
+     src: kidzee,
+      className: "h-20", 
     }
   ];
 
